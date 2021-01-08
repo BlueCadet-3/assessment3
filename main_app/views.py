@@ -4,7 +4,7 @@ from .models import Widget
 
 
 def index(request):
-    todos = Widget.objects.all()
+    widgets = Widget.objects.all()
     return render(request, 'index.html', {'widgets': widgets})
 
 
