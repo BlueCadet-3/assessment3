@@ -1,1 +1,1 @@
-web: gunicorn assessment3.wsgi.application
+web: gunicorn assessment3.wsgi
