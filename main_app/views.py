@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 from .models import Widget
+from .forms import WidgetForm
 
 
 def index(request):
@@ -11,3 +12,8 @@ def index(request):
 class WidgetCreate(CreateView):
     model = Widget
     fields = "__all__"
+
+
+def delete_widget(request, widget_id):
+    Widget.objects.get(id=widget_id).delete()
+    return redirect('/')
